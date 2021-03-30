@@ -7,7 +7,6 @@ import Reservations from './Reservations'
 
 // functional components are great to work with and they can use the props
 // but if we want to use the state, we need a CLASS BASED component
-
 class Home extends React.Component {
 
     state = {
@@ -23,6 +22,7 @@ class Home extends React.Component {
     // }
 
     render() {
+        console.log(this.state.selectedDish)
         return (
             <Container>
                 <Row className="justify-content-center mt-3">
@@ -68,7 +68,8 @@ class Home extends React.Component {
                 </Row>
                 <Row className="justify-content-center mt-5">
                     <Col xs={8}>
-                        <DishComments selectedDish={this.state.selectedDish} />
+                        {!this.state.selectedDish.name === "Amatriciana" && <DishComments selectedDish={this.state.selectedDish} />}
+                        {this.state.selectedDish.name === "Amatriciana" && <div></div>}                   
                     </Col>
                 </Row>
             </Container>

@@ -68,8 +68,7 @@ class Home extends React.Component {
                 </Row>
                 <Row className="justify-content-center mt-5">
                     <Col xs={8}>
-                        {!this.state.selectedDish.name === "Amatriciana" && <DishComments selectedDish={this.state.selectedDish} />}
-                        {this.state.selectedDish.name === "Amatriciana" && <div></div>}                   
+                        {this.state.selectedDish.name !== "Amatriciana" && <DishComments selectedDish={this.state.selectedDish} />}
                     </Col>
                 </Row>
             </Container>
